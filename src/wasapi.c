@@ -30,6 +30,8 @@
 #define E_NOTFOUND 0x80070490
 #endif //E_NOTFOUND
 
+#ifdef __cplusplus
+
 // And some GUID are never implemented (Ignoring the INITGUID define)
 static const CLSID CLSID_MMDeviceEnumerator = {
     0xbcde0395, 0xe52f, 0x467c, {0x8e, 0x3d, 0xc4, 0x57, 0x92, 0x91, 0x69, 0x2e}
@@ -75,7 +77,7 @@ static const IID IID_ISimpleAudioVolume = {
     0x87ce5498, 0x68d6, 0x44e5,{ 0x92, 0x15, 0x6d, 0xa4, 0x7e, 0xf8, 0x83, 0xd8 }
 };
 
-#ifdef __cplusplus
+
 // In C++ mode, IsEqualGUID() takes its arguments by reference
 #define IS_EQUAL_GUID(a, b) IsEqualGUID(*(a), *(b))
 #define IS_EQUAL_IID(a, b) IsEqualIID((a), *(b))
